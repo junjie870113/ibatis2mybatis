@@ -1,6 +1,8 @@
 # iBatis2Mybatis converter
 
-if you have any question, plz feel free to contact me(junjie870113@gmail.com)
+convert base on AST defined by ibatis DTD
+
+if you have any question, plz feel free to contact with me(junjie870113@gmail.com)
 
 ## summary
 
