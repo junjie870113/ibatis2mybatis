@@ -1,0 +1,23 @@
+package indi.lujunjie.mybatis.xmlgramma.context.impl;
+
+import indi.lujunjie.mybatis.xmlgramma.context.ContentContext;
+import indi.lujunjie.mybatis.xmlgramma.context.Removable;
+import indi.lujunjie.mybatis.xmlgramma.visitor.AbstractDFSVisitor;
+import indi.lujunjie.mybatis.xmlgramma.visitor.BaseVisitor;
+
+/**
+ * @author Lu Jun Jie
+ * @date 2021-09-23 10:33
+ */
+public class DeleteContext extends ContentContext {
+
+    private static final String DELETE = "delete";
+
+    public DeleteContext() {
+        super(DELETE);
+    }
+
+    public <T extends Removable> T accept(AbstractDFSVisitor<T> visitor) {
+        return (visitor instanceof BaseVisitor) ? ((BaseVisitor<T>) visitor).visitDelete(this) : visitor.visitChildren(this);
+    }
+}
